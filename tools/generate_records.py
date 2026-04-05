@@ -53,7 +53,7 @@ def generate_json_record(num_records: int) -> None:
         with open(os.path.join(OUTPUT_DIR, f"sighting_{i+1:02d}.json"), "w") as json_file:
             json.dump(record, json_file, indent=4)
 
-    print(f"Generated {num_records} JSON records in {OUTPUT_DIR}/sightings.json")
+    print(f"Generated {num_records} JSON records in {OUTPUT_DIR}/sighting_XX.json")
 
 def generate_csv_record(num_records: int) -> None:
     with open(os.path.join(OUTPUT_DIR, "sightings.csv"), "w", newline="") as csv_file:
@@ -78,7 +78,7 @@ def generate_txt_record(num_records: int) -> None:
         with open(os.path.join(OUTPUT_DIR, f"sighting_{i+1:02d}.txt"), "a") as txt_file:
             txt_file.write(f"{date}: A bright yellow rubber duck was spotted at coordinates ({latitude}, {longitude}).\n")
 
-    print(f"Generated {num_records} txt records in {OUTPUT_DIR}/sightings.txt")
+    print(f"Generated {num_records} txt records in {OUTPUT_DIR}/sighting_XX.txt")
 
 def generate_sample_record(num_records: int) -> None:
     generate_json_record(num_records)
