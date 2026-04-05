@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.13)    # CMAKE version check
 project(rubber_duckies)                 # Create project 
+
 set(CMAKE_CXX_STANDARD 20)              # Enable c++20 standard
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
