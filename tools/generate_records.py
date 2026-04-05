@@ -1,28 +1,33 @@
 """
 This script generates sample sighting records for rubber-duckies project.
-Sighting records is sourced from emails, a web form, and mobile app.
+Sighting records are sourced from emails, a web form, and mobile app.
 
-Raw data is contained in three file formats txt, csv, and json. 
+Raw data is contained in three file formats txt, csv, and json.
 Both json and csv file formats store structured data.
 
-JSON data structure: 
-{
- "latitude": FLOAT,
- "longitude": FLOAT,
- "date": STRING <year-month-day>,
- "description": STRING
-}
+JSON data structure:
+    {
+    "latitude": FLOAT,
+    "longitude": FLOAT,
+    "date": STRING <year-month-day>,
+    "description": STRING
+    }
 
 CSV data structure: 
-STRING Date <year-month-day>, FLOAT latitude, FLOAT longitude , STRING description
+    STRING Date <year-month-day>, FLOAT latitude, FLOAT longitude , STRING description
 
-Data stored in .txt format reprsents gathered from email is unstructed and provides no content garantees.
+Data stored in .txt format represents records from gathered from emails and
+is unstructed and provides no content garantees.
 
 txt record example:
-June 10 2024: This morning I saw a bright yellow rubber duck was spotted
-cruising leisurely on the Thames River in London (51 30' 26''N, 7' 39''W).
-It had a tiny blue scarf around its neck.
+    June 10 2024: This morning I saw a bright yellow rubber duck was spotted
+    cruising leisurely on the Thames River in London (51 30' 26''N, 7' 39''W).
+    It had a tiny blue scarf around its neck.
 
+usage:
+    python generate_records.py -n 10 -d ./sighting-records 
+    -n, --num-records: specifies number of sighting records to generate for each file format (default: 10)
+    -d, --dir: specifies name of output directory for generated sighting records (default: ./sighting-records)
 """
 
 import os
@@ -31,8 +36,8 @@ import csv
 import argparse
 import random
 
-OUTPUT_DIR = "test-data"    # specifies name of output directory for generated sighting records
-NUM_RECORDS = 10           # specifies number of sighting records to generate for each file format
+OUTPUT_DIR = "./sighting-records"  # specifies name of output directory for generated sighting records
+NUM_RECORDS = 10    # specifies number of sighting records to generate for each file format
 
 def generate_json_record(num_records: int) -> None:
     for i in range(num_records):
@@ -86,7 +91,7 @@ def parse_command_line_arguments():
     # set up command line argument parser
     parser = argparse.ArgumentParser(description="Generate sample sighting data for rubber-duckies project.")
     parser.add_argument("-n", "--num-records", type=int, default=NUM_RECORDS, help="Number of sample records to generate.")
-    parser.add_argument("-o", "--output-dir", type=str, default=OUTPUT_DIR, help="Directory to save generated sample data.")
+    parser.add_argument("-d", "--dir", type=str, default=OUTPUT_DIR, help="Directory to save generated sample data.")
     
     # parse command line arguments
     args = parser.parse_args() 
@@ -95,8 +100,8 @@ def parse_command_line_arguments():
     else:
         NUM_RECORDS = args.num_records
 
-    if args.output_dir: 
-        OUTPUT_DIR = args.output_dir
+    if args.dir: 
+        OUTPUT_DIR = args.dir
 
 def make_output_directory():
     # create directory output if it does not already exist 
