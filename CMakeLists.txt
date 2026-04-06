@@ -8,6 +8,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # spdlog and Boost are managed via vcpkg
 find_package(spdlog CONFIG REQUIRED)
 find_package(Boost CONFIG REQUIRED COMPONENTS program_options)
+list(APPEND CMAKE_PREFIX_PATH "${_VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/share/p-ranav-csv2")
+find_package(csv2 CONFIG REQUIRED)
+find_package(RapidJSON CONFIG REQUIRED)
 
 # OpenMP is a compiler feature, found via CMake's built-in module
 find_package(OpenMP REQUIRED COMPONENTS CXX)

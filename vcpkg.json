@@ -10,6 +10,20 @@
     {
         "name": "boost-program-options",
         "version>=": "1.84.0"
+    }, 
+    {
+        "name":"p-ranav-csv2",
+        "version>=": "2020-12-14"
+    }, 
+    {
+        "name": "rapidjson",
+        "version>=": "2025-02-26"
+    }
+  ],
+  "overrides": [
+    {
+      "name": "p-ranav-csv2",
+      "version": "2020-12-14#4"
     }
   ]
 }
