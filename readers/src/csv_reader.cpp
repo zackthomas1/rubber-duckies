@@ -1,3 +1,6 @@
+/// @file csv_reader.cpp
+/// @brief Implements CSV reading functionality for the duckies application.
+
 #include "pch.h"
 #include "csv_reader.h"
 #include "csv2/reader.hpp"

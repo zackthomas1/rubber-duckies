@@ -1,3 +1,9 @@
+/// @file csv_reader.h
+/// @brief Declares the CSV reader for the duckies application.
+
+#ifndef CSV_READER_H
+#define CSV_READER_H
+
 #include "file_reader.h"
 
 namespace duckies {
@@ -25,5 +31,6 @@ public:
     /// @return The file extension that this reader can parse.
     std::string_View suppported_file_extension() const noexcept override;
 }
-
 }
+
+#endif

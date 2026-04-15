@@ -1,3 +1,9 @@
+/// @file duckies_types.h
+/// @brief Declares types used in the duckies application.
+
+#ifndef TYPES_H
+#define TYPES_H
+
 #include <chrono>
 #include <string>
 #include <vector>
@@ -56,3 +62,5 @@ public:
     const std::vector<std::string>& get_descriptions() const { return descriptions_; }
 };
 }
+
+#endif 

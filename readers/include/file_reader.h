@@ -1,3 +1,9 @@
+/// @file file_reader.h
+/// @brief Declares the abstract base class for file readers in the duckies application.
+
+#ifndef FILE_READER_H
+#define FILE_READER_H
+
 #include  <filesystem>
 #include <string_view>
 
@@ -28,3 +34,5 @@ public:
     virtual std::string_view suppported_file_extension() const noexcept = 0;
 };
 }
+
+#endif
