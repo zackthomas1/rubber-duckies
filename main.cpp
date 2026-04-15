@@ -1,19 +1,8 @@
 /// @file main.cpp 
 /// @brief Main entry point for the duckies application, handling configuration, logging, and execution flow.
 
-#include <atomic>
-#include <csignal>
-#include <iostream>
-#include <filesystem>
-#include <vector>
-#include <string>
-
-#include <boost/program_options.hpp>
-#include <spdlog/spdlog.h>
-#include <spdlog/sinks/stdout_color_sinks.h>
-#include <omp.h>
-
 // headers for readers and clustering logic 
+#include "pch.h"
 
 // namespace aliases
 namespace po = boost::program_options;

@@ -18,6 +18,9 @@ set(SOURCE_FILES main.cpp)
 # Add executable target with source files listed in SOURCE_FILES variable
 add_executable(rubber_duckies ${SOURCE_FILES})
 
+# Precompile standard library and project headers
+target_precompile_headers(rubber_duckies PRIVATE "pch.h")
+
 target_link_libraries(rubber_duckies
     PRIVATE
         spdlog::spdlog
